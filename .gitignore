@@ -12,6 +12,10 @@ data/raw/
 *.ckpt
 runs/
 wandb/
+results_smoke/
+# Run configs, histories, summaries and analysis are committed; weights and logits are not.
+results/**/*.npz
+.pytest_cache/
 
 # LaTeX build files
 *.aux
