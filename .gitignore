@@ -5,8 +5,8 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 
-# Data & model artifacts
-data/
+# Data & model artifacts (raw dataset is local-only; split indices are committed)
+data/raw/
 *.pth
 *.pt
 *.ckpt
@@ -24,6 +24,8 @@ wandb/
 *.bbl
 *.blg
 *.xdv
+*.bcf
+*.run.xml
 
 # OS
 .DS_Store

@@ -1,0 +1,141 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BUPTReport.sty -- adaptation for a BUPT course paper (not an official
+% BUPT-provided template).
+% Original: UCASReport.sty by jweihe, license CC BY 4.0
+%   https://github.com/jweihe/UCAS_Latex_Template
+%   https://www.overleaf.com/latex/templates/zhong-guo-ke-xue-yuan-da-xue-ke-cheng-lun-wen-mo-ban/nphpxhhqvnds
+% Original UCASReport also notes a prior adaptation from the Peking
+% University course-paper template by Shawn Wang:
+%   https://www.overleaf.com/latex/templates/bei-jing-da-xue-ke-cheng-lun-wen-mo-ban/yntmqcktrzfh
+% Adaptation: BUPT school fields, separate metadata, stable titlepage,
+% XeLaTeX font configuration, concise packages and citation settings.
+% For copyright/provenance, see TEMPLATE_CREDITS.md.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{BUPTReport}[2026/10/12 BUPT course paper adaptation]
+\RequirePackage[left=2.50cm,right=2.50cm,top=2.50cm,bottom=2.50cm,headheight=16pt]{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{amsmath,amssymb,amsthm,bm}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs,tabularx,multirow}
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+\RequirePackage[section]{placeins}
+\RequirePackage{fancyhdr}
+\RequirePackage{xcolor}
+\RequirePackage{xurl}
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage{hyperref}
+
+% Times 风格西文；中文使用 ctex 的可移植 Fandol 字体集合，保持
+% 宋体正文、黑体标题、楷体封面个人信息、仿宋页眉的原有层次。
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\setmonofont{DejaVu Sans Mono}
+\linespread{1.28}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+% 连续正文不强制章/节换页；图表可与正文混排，且不跨越章节。
+\raggedbottom
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.60}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.70}
+\graphicspath{{figures/}}
+\definecolor{BUPTBlue}{HTML}{003399}
+
+% 保持国科大模板的简洁排版气质，用 section 表示“章”，避免 book 类
+% 文档自动另起章页。正文引用仍用阿拉伯数字，以适应 1.1、1.2 编号。
+\ctexset{
+  section = {
+    name = {第,章},
+    number = \chinese{section},
+    format = \centering\heiti\zihao{3},
+    beforeskip = 2.5ex plus 1ex minus .2ex,
+    afterskip = 2ex plus .2ex,
+  },
+  subsection = {
+    format = \heiti\zihao{4},
+    beforeskip = 2ex plus .5ex,
+    afterskip = 1ex,
+  },
+  subsubsection = {
+    format = \heiti\normalsize,
+    beforeskip = 1ex,
+    afterskip = .6ex,
+  }
+}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+\captionsetup{font=small,labelsep=quad,justification=centering}
+\hypersetup{
+  unicode=true,bookmarksnumbered=true,
+  colorlinks=true,linkcolor=black,citecolor=black,urlcolor=BUPTBlue,
+  pdftitle={\ReportTitle},pdfauthor={\ReportAuthor},
+  pdfsubject={北京邮电大学课程实验报告}
+}
+\renewcommand{\equationautorefname}{式}
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\tableautorefname}{表}
+\renewcommand{\sectionautorefname}{章}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\fangsong\small \ReportHeader}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+% 固定封面位置；使用官方 Logo 时仅需将可验证的官方素材放入
+% figures/bupt_logo.pdf。若未找到文件，降级为纯文字校名，不
+% 伪造学校校徽；这便于 P2 在缺少素材时仍然稳定编译。
+\newcommand{\buptcoverlogo}{%
+  \IfFileExists{figures/bupt_logo.pdf}{%
+    \includegraphics[width=.66\textwidth,height=2.35cm,keepaspectratio]{figures/bupt_logo.pdf}%
+  }{%
+    {\heiti\fontsize{27pt}{34pt}\selectfont \ReportUniversity}\par\vspace{0.3em}%
+    {\footnotesize BEIJING UNIVERSITY OF POSTS AND TELECOMMUNICATIONS}%
+  }%
+}
+\newcommand{\coverinfo}[2]{%
+  \noindent\makebox[3.6em][l]{\kaishu\large #1}%
+  \rule[-2pt]{0pt}{0pt}%
+  \makebox[8.8cm][c]{\kaishu\large #2}%
+  \par\vspace{-0.45em}\hspace*{3.6em}\rule{8.8cm}{0.45pt}\par\vspace{0.55cm}%
+}
+\newcommand{\makebuptcover}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{1.7cm}
+    \buptcoverlogo\par
+    \vspace{3.4cm}
+    {\heiti\fontsize{24pt}{30pt}\selectfont 神经网络与深度学习}\par
+    \vspace{0.45cm}
+    {\heiti\fontsize{19pt}{26pt}\selectfont \ReportType}\par
+    \vspace{0.85cm}
+    {\heiti\fontsize{17pt}{26pt}\selectfont\parbox{0.95\textwidth}{\centering\ReportTitle}}\par
+    \vspace{0.7cm}
+    {\kaishu\large\underline{\ReportAssignment}}\par
+    \vfill
+    \begin{minipage}{12cm}
+      \coverinfo{姓\quad 名}{\ReportAuthor}
+      \coverinfo{学\quad 号}{\ReportStudentID}
+      \coverinfo{学\quad 院}{\ReportCollege}
+      \coverinfo{班\quad 级}{\ReportClass}
+    \end{minipage}\par
+    \vspace{0.25cm}
+    {\large \ReportDate}\par
+    \vspace*{0.8cm}
+  \end{titlepage}
+}
+\newcommand{\frontmatterbupt}{%
+   \pagestyle{fancy}\pagenumbering{Roman}\setcounter{page}{1}
+}
+\newcommand{\mainmatterbupt}{%
+   \pagestyle{fancy}\pagenumbering{arabic}\setcounter{page}{1}
+}

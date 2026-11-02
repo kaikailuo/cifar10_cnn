@@ -1,0 +1,33 @@
+{
+  "algorithm": "stratified_v1_largest_remainder",
+  "dataset": "cifar10",
+  "label_sha256": "2b7cd2f24487317614016b72ffd53071c3062f592f0eb300c18a770d41ae1253",
+  "seed": 20261011,
+  "split_sha256": "3aa61de0e8e9e4bae6e2712fbf67a29c10d3c792c192f40106360e5b7e076110",
+  "train_class_counts": [
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500
+  ],
+  "train_size": 45000,
+  "val_class_counts": [
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500
+  ],
+  "val_size": 5000
+}

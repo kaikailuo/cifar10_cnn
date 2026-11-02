@@ -1,0 +1,51 @@
+% !TeX program = xelatex
+% 北京邮电大学《神经网络与深度学习（理论）》A2 课程实验报告
+% 模板沿用 A1 报告工程（BUPTReport.sty），来源见 TEMPLATE_CREDITS.md。
+\documentclass[12pt,a4paper,UTF8,fontset=fandol]{ctexart}
+\input{metadata}
+\usepackage{BUPTReport}
+
+\hypersetup{pdfsubject={北京邮电大学 A2 卷积神经网络图像分类课程实验报告}}
+
+\begin{document}
+\makebuptcover
+
+\frontmatterbupt
+\begin{center}
+    {\heiti\zihao{3} 摘\quad 要}
+\end{center}
+\vspace{0.8em}
+% TODO: 实验完成后填写摘要。
+
+\vspace{1.3em}
+\noindent\textbf{关键词：}\hspace{0.5em}卷积神经网络；CIFAR-10；图像分类；Dropout；归一化
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\mainmatterbupt
+\input{sections/01_introduction}
+\input{sections/02_theory}
+\input{sections/03_implementation}
+\input{sections/04_experiments}
+\input{sections/05_results}
+\input{sections/06_extensions}
+\clearpage
+\input{sections/07_conclusion}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
+\bibliographystyle{gbt7714-numeric}
+\begingroup
+\small
+\setlength{\bibsep}{3pt}
+\bibliography{references}
+\endgroup
+
+\clearpage
+\appendix
+\ctexset{section={name={附录\space,},number=\Alph{section}}}
+\input{sections/08_appendix}
+\end{document}
