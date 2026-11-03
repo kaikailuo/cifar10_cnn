@@ -1,0 +1,31 @@
+{
+  "model": "vgg",
+  "widths": [
+    64,
+    128,
+    256
+  ],
+  "convs_per_stage": 2,
+  "fc_hidden": 256,
+  "depth": 20,
+  "residual": true,
+  "norm": "gn",
+  "gn_groups": 8,
+  "pool": "max",
+  "conv_dropout": 0.0,
+  "fc_dropout": 0.5,
+  "weight_decay": 3.34e-05,
+  "label_smoothing": 0.0,
+  "augment": "none",
+  "cutout": 0,
+  "epochs": 15,
+  "batch_size": 128,
+  "lr": 0.00528,
+  "momentum": 0.9,
+  "warmup_epochs": 2,
+  "split": "holdout",
+  "fold": null,
+  "train_limit": null,
+  "val_limit": null,
+  "seed": 0
+}

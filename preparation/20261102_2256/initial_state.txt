@@ -1,0 +1,66 @@
+## main...origin/main
+e813e4d Add handoff guide for running experiments and writing the report on a GPU server
+71e708e Add PyTorch experiment pipeline for CNN on CIFAR-10
+30d963b Migrate CIFAR-10 split and LaTeX report template from A1
+29cb857 Initial commit: add task requirements and project overview
+   PID   PPID     ELAPSED COMMAND
+     1      0       20:50 bash /init/boot/boot.sh
+  1184      1       20:48 /bin/supervisord -c /init/supervisor/supervisor.ini
+  1199   1184       20:48 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+  1206   1184       20:48 /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py
+  1207   1184       20:48 proxy -c /init/proxy/proxy-hot-backup.ini
+  1208   1184       20:48 /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs
+  1209   1184       20:48 proxy -c /init/proxy/proxy.ini
+  1210   1184       20:48 autopanel serve --work-dir=/root/autodl-tmp --cache-dir=/root/autodl-tmp
+  1268   1208       20:48 /root/miniconda3/lib/python3.12/site-packages/tensorboard_data_server/bin/server --logdir=/root/tf-logs --reload=5 --samples-per-plugin= --port=0 --port-file=/tmp/tensorboard_data_server_iq9s295m/port --die-after-stdin --error-file=/tmp/tensorboard_data_server_iq9s295m/startup_error
+  1661   1199       17:26 sshd: root@pts/0
+  1672   1661       17:26 -bash
+  1895   1199       15:06 sshd: root
+  2955      1       09:50 codex -c features.code_mode_host=true app-server --listen unix://
+  3926   1199       06:12 sshd: root@notty
+  3939   3926       06:12 codex app-server proxy
+  4525   2955       00:50 /root/.codex/packages/standalone/releases/0.166.0-x86_64-unknown-linux-musl/bin/codex-code-mode-host
+  4667   2955       00:01 /bin/bash -c mkdir -p preparation/20261103_0656 && python - <<'PY' import sys,json,os,platform,subprocess,hashlib from pathlib import Path import torch,numpy as np p=Path('preparation/20261103_0656'); p.joinpath('initial_state.txt').write_text(subprocess.getoutput('git status --short --branch; git log -5 --oneline; ps -eo pid,ppid,etime,args; nvidia-smi; free -h; df -h .; cat /sys/fs/cgroup/cpu.max /sys/fs/cgroup/memory.max /sys/fs/cgroup/memory.current; cat /etc/os-release')) r=dict(python=sys.executable,version=sys.version,torch=str(torch.__version__),numpy=np.__version__,cuda=torch.version.cuda,available=torch.cuda.is_available(),arch=torch.cuda.get_arch_list(),device=torch.cuda.get_device_name(),capability=torch.cuda.get_device_capability(),bf16=torch.cuda.is_bf16_supported(),affinity=len(os.sched_getaffinity(0))) m=torch.nn.Sequential(torch.nn.Conv2d(3,16,3,padding=1),torch.nn.ReLU(),torch.nn.AdaptiveAvgPool2d(1),torch.nn.Flatten(),torch.nn.Linear(16,10)).cuda(); o=torch.optim.SGD(m.parameters(),lr=.1) x=torch.randn(32,3,32,32,device='cuda'); y=torch.randint(10,(32,),device='cuda'); old=next(m.parameters()).detach().clone() with torch.autocast('cuda',dtype=torch.bfloat16): z=m(x) loss=torch.nn.functional.cross_entropy(z.float(),y); loss.backward(); o.step(); torch.cuda.synchronize() r.update(output_dtype=str(z.dtype),loss=loss.item(),finite=all(torch.isfinite(t).all().item() for t in [z,loss,*[v.grad for v in m.parameters()]]),updated=not torch.equal(old,next(m.parameters())),tensor_device=str(z.device),memory_allocated=torch.cuda.memory_allocated()) assert r['finite'] and r['updated']; p.joinpath('environment.json').write_text(json.dumps(r,indent=2)); print(json.dumps(r,indent=2)) from src.data import load_cifar10,holdout_split,kfold_ids x,y,tx,ty=load_cifar10(); a,b=holdout_split(y); f=kfold_ids(y) assert len(a)==45000 and len(b)==5000 and len(np.unique(np.concatenate([a,b])))==50000 assert np.array_equal(np.sort(np.concatenate([a,b])),np.arange(50000)) d=dict(train_shape=x.shape,test_shape=tx.shape,holdout=[len(a),len(b)],fold_sizes=np.bincount(f).tolist(),fold_class_counts=[np.bincount(y[f==i],minlength=10).tolist() for i in range(5)],files={str(q):hashlib.md5(q.read_bytes()).hexdigest() for q in Path('data/raw/cifar10/cifar-10-batches-py').iterdir() if q.is_file()}) assert d['files']['data/raw/cifar10/cifar-10-batches-py/data_batch_1']=='c99cafc152244af753f735de768cd75f' assert d['files']['data/raw/cifar10/cifar-10-batches-py/test_batch']=='40351d587109b95175f43aff81a1287e' p.joinpath('data_check.json').write_text(json.dumps(d,indent=2)); print('data verified') PY python -m pytest -q > preparation/20261103_0656/pytest_initial.txt 2>&1
+  4669   4667       00:01 python -
+  4685   4669       00:00 /bin/sh -c git status --short --branch; git log -5 --oneline; ps -eo pid,ppid,etime,args; nvidia-smi; free -h; df -h .; cat /sys/fs/cgroup/cpu.max /sys/fs/cgroup/memory.max /sys/fs/cgroup/memory.current; cat /etc/os-release
+  4688   4685       00:00 ps -eo pid,ppid,etime,args
+Mon Nov  2 22:55:12 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 595.71.05              Driver Version: 595.71.05      CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        On  |   00000000:AB:00.0 Off |                  N/A |
+| 42%   27C    P8             16W /  575W |       2MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+               total        used        free      shared  buff/cache   available
+Mem:           754Gi        67Gi       431Gi        24Gi       256Gi       656Gi
+Swap:             0B          0B          0B
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/md0         50G  341M   50G   1% /root/autodl-tmp
+1600000 100000
+98784247808
+1944035328
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy

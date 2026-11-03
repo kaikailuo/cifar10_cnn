@@ -16,10 +16,29 @@ results_smoke/
 # Run configs, histories, summaries and analysis are committed; weights and logits are not.
 results/**/*.npz
 .pytest_cache/
+.uv-cache/
+
+# Local scratch, build and packaging artifacts
+/tmp/
+/tmp_placeholder/
+/report/build/
+/report/compile*.txt
+/audit/**/rendered/
+*.zip
+
+# Keep exactly one delivered report; figure PDFs are source assets.
+/output/*
+!/output/pdf/
+/output/pdf/*
+!/output/pdf/A2_CIFAR10_report_v3_logo.pdf
+/report/figures/*.png
+!/report/figures/bupt_logo.png
 
 # LaTeX build files
 *.aux
 *.log
+!/results/**/train.log
+!/preparation/formal_logs/*.log
 *.out
 *.toc
 *.synctex.gz

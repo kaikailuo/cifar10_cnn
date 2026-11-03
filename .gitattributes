@@ -1,0 +1,8 @@
+# Frozen experiment and provenance evidence must retain its original bytes.
+results/** -text whitespace=cr-at-eol
+audit/** -text whitespace=cr-at-eol
+preparation/** -text -whitespace
+
+# Preserve generated SVG paths and upstream license text verbatim.
+report/figures/*.svg -whitespace
+report/fonts/*LICENSE.txt -whitespace

@@ -1,0 +1,25 @@
+ M src/run.py
+ M src/train.py
+?? audit/
+?? preparation/
+?? report/figures/b1_ablation.pdf
+?? report/figures/baseline_curves.pdf
+?? report/figures/depth_train_error.pdf
+?? report/figures/dropout_gap.pdf
+?? report/figures/norm_curves.pdf
+?? report/figures/norm_lr.pdf
+?? report/figures/reliability.pdf
+?? report/figures/shift_accuracy.pdf
+?? report/tables/b1_ablation.tex
+?? report/tables/calibration.tex
+?? report/tables/cv.tex
+?? report/tables/depth.tex
+?? report/tables/dropout.tex
+?? report/tables/dropout_norm.tex
+?? report/tables/final.tex
+?? report/tables/norm.tex
+?? report/tables/norm_batch.tex
+?? report/tables/norm_lr.tex
+?? report/tables/search.tex
+?? report/tables/shift.tex
+?? results/

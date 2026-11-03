@@ -5,11 +5,14 @@
 ## 交付物
 
 1. **源码**：`src/`，PyTorch 实现的模型、训练、交叉验证、分析与报告图表生成
-2. **报告**：`report/`，LaTeX 撰写
+2. **最终报告**：[A2_CIFAR10_report_v3_logo.pdf](output/pdf/A2_CIFAR10_report_v3_logo.pdf)（18 页，作者已验收）
+3. **报告源码**：`report/main.tex`，唯一保留的 LaTeX 工程；编译与重绘见 [report/README.md](report/README.md)
+
+正式实验已完成：107 个任务，106 个跑满，1 个 NaN 发散；全量重训测试 89.25%，五折集成 90.20%，加宽 VGG 93.87%，B1 三模型集成 94.36%。原始记录保留在 `results/`。旧报告、重复源码包与排版截图已清理。
 
 ## 实验设计
 
-所有实验共用一个 VGG 风格基准网络（3 段 × 2 个 3×3 卷积，通道 64/128/256，FC 256 → 10），SGD + Nesterov 动量，2 轮预热后余弦退火。基础部分不做数据增强，以便让正则化与归一化对泛化的影响清楚可见。**训练阶段从不使用测试集**，所有选择冻结后由 `src/analysis.py` 统一评估一次。
+所有实验共用一个 VGG 风格基准网络（3 段 × 2 个 3×3 卷积，通道 64/128/256，FC 256 → 10），SGD + Nesterov 动量，2 轮预热后余弦退火。基础部分不做数据增强，以便让正则化与归一化对泛化的影响清楚可见。**正式模型选择依据验证集和交叉验证**，完整测试集在正式训练后由 `src/analysis.py` 集中分析。准备阶段冒烟曾评估测试集前 500 张；交叉验证是搜索后的内部选型估计，并非嵌套 CV。
 
 | 组 | 对应要求 | 内容 | 次数 |
 | --- | --- | --- | ---: |
@@ -53,11 +56,13 @@ python -m src.run --jobs 4                  # 正式全部实验 + 分析 + 出�
 - 只跑部分组：`python -m src.run --groups e1_dropout,e2_norm --jobs 4`；之后用 `python -m src.run --analyze-only` 做分析与出图。
 - 需要上传：整个仓库 + `data/raw/cifar10/cifar-10-batches-py/`（178 MB）。
 
-## 输出
+## 输出与归档
 
 - `results/<组>/<实验>/`：`config.json`、`history.csv`（逐轮训练/验证指标）、`summary.json`、`train.log`，以及不进 Git 的 `model.pt`、`val_logits.npz`、`test_logits.npz`。
 - `results/analysis/analysis.json`：测试集结果、集成、校准、平移一致性。
-- `report/tables/*.tex`、`report/figures/*.pdf`：报告直接 `\input` / `\includegraphics` 的三线表与图。
+- `report/tables/*.tex`、`report/figures/*.pdf`：最终报告使用的表和图，另有封面校徽、结构图 SVG、绘图代码、字体及许可证。
+- `audit/`、`preparation/`：正式结果审计与服务器运行/同步来源证据，属于历史记录，路径和哈希反映整理前状态。
+- Git 保留配置、历史、摘要、正式训练日志和分析汇总；忽略原始数据、权重、logits、本地环境、缓存、冒烟结果及编译中间文件。
 
 ## 目录结构
 
@@ -78,7 +83,8 @@ python -m src.run --jobs 4                  # 正式全部实验 + 分析 + 出�
 │   ├── raw/cifar10/cifar-10-batches-py/  # CIFAR-10 原始数据（不进 Git）
 │   └── splits/            # A1 固定划分 + 5 折划分索引
 ├── results/               # 实验结果
-└── report/                # LaTeX 报告
+├── report/                # 最终报告唯一 LaTeX 工程
+└── output/pdf/            # 仅保留验收 PDF
 ```
 
 ## 数据划分

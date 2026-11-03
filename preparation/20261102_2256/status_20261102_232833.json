@@ -1,0 +1,61 @@
+{
+  "at_beijing": "2026-11-02T23:28:33.490288+08:00",
+  "completed": 24,
+  "by_group": {
+    "e0_baseline": 3,
+    "e1_dropout": 15,
+    "e2_norm": 6
+  },
+  "diverged": [],
+  "all_completed_files_ok": true,
+  "active": [
+    {
+      "run": "results/e2_norm/gn__s0",
+      "last_epoch": 5,
+      "epochs": 30,
+      "last_epoch_s": 6.879062904044986,
+      "recent_mean_s": 8.020181081444026
+    },
+    {
+      "run": "results/e2_norm/gn__s1",
+      "last_epoch": 5,
+      "epochs": 30,
+      "last_epoch_s": 6.88297688215971,
+      "recent_mean_s": 7.985740642249584
+    },
+    {
+      "run": "results/e2_norm/gn__s2",
+      "last_epoch": 4,
+      "epochs": 30,
+      "last_epoch_s": 6.888829382136464,
+      "recent_mean_s": 8.528869333676994
+    },
+    {
+      "run": "results/e2_norm/in__s0",
+      "last_epoch": 11,
+      "epochs": 30,
+      "last_epoch_s": 6.885495636612177,
+      "recent_mean_s": 6.475492393970489
+    },
+    {
+      "run": "results/e2_norm/in__s1",
+      "last_epoch": 11,
+      "epochs": 30,
+      "last_epoch_s": 6.8965193424373865,
+      "recent_mean_s": 6.602682280912996
+    },
+    {
+      "run": "results/e2_norm/in__s2",
+      "last_epoch": 11,
+      "epochs": 30,
+      "last_epoch_s": 6.87731914781034,
+      "recent_mean_s": 6.606641808524728
+    }
+  ],
+  "errors": [],
+  "cpu_used_cores": 6.13164469100043,
+  "cpu_throttled_periods_delta": 0,
+  "memory_used_gib": 13.781414031982422,
+  "gpu_first_sample": "100 %, 12990 MiB, 463.93 W, 69, 2797 MHz, 3090 MHz",
+  "gpu_last_sample": "100 %, 12990 MiB, 464.45 W, 69, 2797 MHz, 3090 MHz"
+}

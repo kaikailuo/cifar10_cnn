@@ -1,0 +1,8 @@
+{
+  "src/config.py": "387ffd3199713418a5149677f45d9e47c6e431b62bc117592b8bc8d370c85620",
+  "src/experiments.py": "ab6954b925ca26203ea406599a5a11e519b7abc75b4ee7e7192f307b6bb43a6e",
+  "data/splits/cifar10_kfold5_v1.json": "7edb21babf70171d19ff15883376f7ad90cb38bbe4068733a82d417e6851231d",
+  "data/splits/cifar10_kfold5_v1.npz": "1075a125deb859daa81cc11b4d3ea154b278c737bdde057d9e181f1253d1e7c0",
+  "data/splits/cifar10_split_v1.json": "684f308ec02eba5838374ade6edef786b97246a8ad7706ab7316b3253f424704",
+  "data/splits/cifar10_split_v1.npz": "21c272452e160c2ed41b7f35adb8c9c125aeafe9ab5fb0351421b86124c659c2"
+}

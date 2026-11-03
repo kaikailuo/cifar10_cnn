@@ -49,7 +49,15 @@ def prepare(ctx: Context, groups: list[str]) -> list[Path]:
 
 
 def execute(run_dirs: list[Path], jobs: int, device: str) -> list[Path]:
-    threads = max(1, (os.cpu_count() or 1) // jobs)
+    # Container CPU quota can be much smaller than the host CPU count.
+    cpus = len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else (os.cpu_count() or 1)
+    try:
+        quota, period = Path("/sys/fs/cgroup/cpu.max").read_text().split()
+        if quota != "max":
+            cpus = min(cpus, max(1, int(quota) // int(period)))
+    except (OSError, ValueError):
+        pass
+    threads = max(1, cpus // jobs)
 
     def launch(run_dir: Path) -> tuple[Path, int, float]:
         t0 = time.perf_counter()

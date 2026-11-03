@@ -4,18 +4,31 @@
 \documentclass[12pt,a4paper,UTF8,fontset=fandol]{ctexart}
 \input{metadata}
 \usepackage{BUPTReport}
+\makeatletter
+\newcommand{\ReportBibControl}{\immediate\write\@auxout{\string\citation{report-bib}}}
+\makeatother
+\ExplSyntaxOn
+\NewDocumentCommand{\ReportCompactURL}{m}
+  {\group_begin:
+   \tl_set:Nn \l_tmpa_tl {#1}
+   \regex_replace_once:nnN {\A https?://(www\.)?} {} \l_tmpa_tl
+   \href{#1}{\mbox{\exp_args:NV \nolinkurl \l_tmpa_tl}}
+   \group_end:}
+\ExplSyntaxOff
 
 \hypersetup{pdfsubject={北京邮电大学 A2 卷积神经网络图像分类课程实验报告}}
+\hypersetup{pageanchor=false}
 
 \begin{document}
 \makebuptcover
+\hypersetup{pageanchor=true}
 
 \frontmatterbupt
 \begin{center}
     {\heiti\zihao{3} 摘\quad 要}
 \end{center}
 \vspace{0.8em}
-% TODO: 实验完成后填写摘要。
+构建CIFAR-10卷积分类器，通过107次正式训练比较Dropout、归一化及超参数选型，并验证深度退化、校准和平移敏感性的改进。基准三种子验证准确率为$83.15\pm0.29\%$，FC Dropout0.7和BN分别为$85.76\pm0.16\%$与$86.77\pm0.16\%$。随机搜索与五折选型后的全量重训测试89.25\%；增强、平滑和加宽单模型测试93.87\%，三模型集成94.36\%。残差连接、温度缩放及抗混叠池化分别改善相应问题。
 
 \vspace{1.3em}
 \noindent\textbf{关键词：}\hspace{0.5em}卷积神经网络；CIFAR-10；图像分类；Dropout；归一化
@@ -31,17 +44,21 @@
 \input{sections/04_experiments}
 \input{sections/05_results}
 \input{sections/06_extensions}
-\clearpage
 \input{sections/07_conclusion}
 
+\FloatBarrier
 \clearpage
 \phantomsection
 \addcontentsline{toc}{section}{参考文献}
 \bibliographystyle{gbt7714-numeric}
+\ReportBibControl
 \begingroup
-\small
-\setlength{\bibsep}{3pt}
-\bibliography{references}
+\linespread{1.12}\small
+\raggedright
+\let\url\ReportCompactURL
+\interlinepenalty=10000
+\setlength{\bibsep}{2pt}
+\bibliography{bibliography_style,references}
 \endgroup
 
 \clearpage

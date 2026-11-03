@@ -1,2 +1,10 @@
-\section{系统实现}
-% TODO: 代码结构、数据管线、模型定义、训练与评估流程。
+\section{实现与训练流程}
+\subsection{主要模块与数据管线}
+\texttt{config.py}与\texttt{experiments.py}定义训练配置和实验分组；\texttt{data.py}处理数据读取、划分与预处理；\texttt{models.py}实现CNN、Plain/ResNet及池化模块；\texttt{train.py}完成训练、评估与保存；\texttt{analysis.py}和\texttt{report.py}负责指标汇总与图表生成。
+
+数据从CIFAR-10的Python批文件读取。DeviceLoader将图像和标签放到目标设备，按批完成采样、标准化和训练增强。每轮依次执行前向传播、交叉熵计算、反向传播、SGD更新及学习率调度，随后切换为评估模式计算指标。
+
+\subsection{评估、保存与运行环境}
+报告中的训练准确率来自固定5000张训练子集，在评估模式下计算；泛化差距为其与验证准确率之差，以百分点（pp）表示。模型选择和最终评估统一使用最后一轮权重。每轮保存训练断点，任务结束后保存配置、指标历史、模型权重及预测logits。
+
+实验使用单张RTX 5090（约32GB显存），Ubuntu 22.04、Python 3.12.3、PyTorch 2.8.0+cu128和NumPy 2.3.2；训练采用BF16混合精度前向与FP32损失。基础对照固定随机种子0、1、2，其余实验设置见表\ref{tab:design}。

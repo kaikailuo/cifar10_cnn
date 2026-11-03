@@ -1,0 +1,7 @@
+{
+  "started_at_beijing": "2026-11-02T23:18:50.764140+08:00",
+  "session": "a2",
+  "jobs": 6,
+  "device": "cuda",
+  "launcher": "/root/autodl-tmp/cifar10_cnn/preparation/20261102_2256/launch_formal.sh"
+}

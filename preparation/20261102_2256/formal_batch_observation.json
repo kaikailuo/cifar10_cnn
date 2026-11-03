@@ -1,0 +1,224 @@
+[
+  {
+    "at_beijing": "2026-11-02T23:19:38.423413+08:00",
+    "completed": 0,
+    "progress": [
+      {
+        "run": "results/e0_baseline/vgg-none__s0",
+        "epoch": 10,
+        "epoch_s": 3.5440100338310003
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s1",
+        "epoch": 10,
+        "epoch_s": 3.5934891384094954
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s2",
+        "epoch": 10,
+        "epoch_s": 3.5475498642772436
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s0",
+        "epoch": 10,
+        "epoch_s": 3.5766116231679916
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s1",
+        "epoch": 10,
+        "epoch_s": 3.5947841703891754
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s2",
+        "epoch": 10,
+        "epoch_s": 3.583257967606187
+      }
+    ],
+    "gpu": "99 %, 7416 MiB"
+  },
+  {
+    "at_beijing": "2026-11-02T23:19:53.524952+08:00",
+    "completed": 0,
+    "progress": [
+      {
+        "run": "results/e0_baseline/vgg-none__s0",
+        "epoch": 14,
+        "epoch_s": 3.5390648003667593
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s1",
+        "epoch": 14,
+        "epoch_s": 3.5903595853596926
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s2",
+        "epoch": 14,
+        "epoch_s": 3.5741587094962597
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s0",
+        "epoch": 14,
+        "epoch_s": 3.5923584289848804
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s1",
+        "epoch": 15,
+        "epoch_s": 3.523305056616664
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s2",
+        "epoch": 15,
+        "epoch_s": 3.5738948974758387
+      }
+    ],
+    "gpu": "99 %, 7416 MiB"
+  },
+  {
+    "at_beijing": "2026-11-02T23:20:08.629635+08:00",
+    "completed": 0,
+    "progress": [
+      {
+        "run": "results/e0_baseline/vgg-none__s0",
+        "epoch": 19,
+        "epoch_s": 3.594433430582285
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s1",
+        "epoch": 19,
+        "epoch_s": 3.5631260871887207
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s2",
+        "epoch": 19,
+        "epoch_s": 3.641517963260412
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s0",
+        "epoch": 19,
+        "epoch_s": 3.585796307772398
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s1",
+        "epoch": 19,
+        "epoch_s": 3.559553587809205
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s2",
+        "epoch": 19,
+        "epoch_s": 3.5543566308915615
+      }
+    ],
+    "gpu": "99 %, 7416 MiB"
+  },
+  {
+    "at_beijing": "2026-11-02T23:20:23.736341+08:00",
+    "completed": 0,
+    "progress": [
+      {
+        "run": "results/e0_baseline/vgg-none__s0",
+        "epoch": 23,
+        "epoch_s": 3.5770876090973616
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s1",
+        "epoch": 23,
+        "epoch_s": 3.5855466555804014
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s2",
+        "epoch": 23,
+        "epoch_s": 3.6273012552410364
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s0",
+        "epoch": 23,
+        "epoch_s": 3.6020008325576782
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s1",
+        "epoch": 23,
+        "epoch_s": 3.555622661486268
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s2",
+        "epoch": 23,
+        "epoch_s": 3.5858368184417486
+      }
+    ],
+    "gpu": "99 %, 7416 MiB"
+  },
+  {
+    "at_beijing": "2026-11-02T23:20:38.848614+08:00",
+    "completed": 0,
+    "progress": [
+      {
+        "run": "results/e0_baseline/vgg-none__s0",
+        "epoch": 27,
+        "epoch_s": 3.6170612666755915
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s1",
+        "epoch": 27,
+        "epoch_s": 3.614763906225562
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s2",
+        "epoch": 27,
+        "epoch_s": 3.5902740471065044
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s0",
+        "epoch": 27,
+        "epoch_s": 3.595282580703497
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s1",
+        "epoch": 27,
+        "epoch_s": 3.6097961999475956
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s2",
+        "epoch": 27,
+        "epoch_s": 3.608776131644845
+      }
+    ],
+    "gpu": "99 %, 7416 MiB"
+  },
+  {
+    "at_beijing": "2026-11-02T23:20:53.937743+08:00",
+    "completed": 6,
+    "progress": [
+      {
+        "run": "results/e0_baseline/vgg-none__s0",
+        "epoch": 30,
+        "epoch_s": 3.564224077388644
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s1",
+        "epoch": 30,
+        "epoch_s": 3.5494226310402155
+      },
+      {
+        "run": "results/e0_baseline/vgg-none__s2",
+        "epoch": 30,
+        "epoch_s": 3.5253539253026247
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s0",
+        "epoch": 30,
+        "epoch_s": 3.554974652826786
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s1",
+        "epoch": 30,
+        "epoch_s": 3.5970810279250145
+      },
+      {
+        "run": "results/e1_dropout/fc0.3__s2",
+        "epoch": 30,
+        "epoch_s": 3.5553317703306675
+      }
+    ],
+    "gpu": "98 %, 5776 MiB"
+  }
+]

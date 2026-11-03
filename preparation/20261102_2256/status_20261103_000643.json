@@ -1,0 +1,56 @@
+{
+  "at_beijing": "2026-11-03T00:06:43.323011+08:00",
+  "completed": 104,
+  "by_group": {
+    "b1_ablation": 5,
+    "b2_depth": 6,
+    "e0_baseline": 3,
+    "e1_dropout": 15,
+    "e2_batch": 3,
+    "e2_dropout_norm": 6,
+    "e2_lr": 9,
+    "e2_norm": 12,
+    "e3_cv": 20,
+    "e3_final": 1,
+    "e3_search": 24
+  },
+  "diverged": [
+    "results/e2_lr/none-lr0.4__s0"
+  ],
+  "completed_files_ok": true,
+  "active": [
+    {
+      "run": "results/b1_ablation/b1-5-resnet56__s0",
+      "epoch": 5,
+      "total_epochs": 40,
+      "recent_epoch_s": 15.756019842624664,
+      "remaining_s": 551.4606944918633,
+      "norm": "bn",
+      "batch": 128
+    },
+    {
+      "run": "results/b2_shift/blur-flipcrop__s0",
+      "epoch": 13,
+      "total_epochs": 40,
+      "recent_epoch_s": 3.308673952519894,
+      "remaining_s": 89.33419671803713,
+      "norm": "bn",
+      "batch": 128
+    },
+    {
+      "run": "results/b2_shift/blur-none__s0",
+      "epoch": 14,
+      "total_epochs": 40,
+      "recent_epoch_s": 3.2940694320946933,
+      "remaining_s": 85.64580523446203,
+      "norm": "bn",
+      "batch": 128
+    }
+  ],
+  "errors": [],
+  "cpu_used_cores": 3.0714125504173797,
+  "cpu_throttled_periods_delta": 0,
+  "memory_used_gib": 10.158027648925781,
+  "gpu": "100 %, 5528 MiB, 349.61 W, 64, 2805 MHz",
+  "analysis_exists": false
+}

@@ -17,9 +17,11 @@
 \RequirePackage{fontspec}
 \RequirePackage{amsmath,amssymb,amsthm,bm}
 \RequirePackage{graphicx}
+\RequirePackage{float}
 \RequirePackage{booktabs,tabularx,multirow}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
+\RequirePackage{needspace}
 \RequirePackage[section]{placeins}
 \RequirePackage{fancyhdr}
 \RequirePackage{xcolor}
@@ -29,12 +31,22 @@
 
 % Times 风格西文；中文使用 ctex 的可移植 Fandol 字体集合，保持
 % 宋体正文、黑体标题、楷体封面个人信息、仿宋页眉的原有层次。
-\setmainfont{Liberation Serif}
-\setsansfont{Liberation Sans}
-\setmonofont{DejaVu Sans Mono}
-\linespread{1.28}
+% 随报告保留原模板字体；使用文件名避免各平台字体缓存差异。
+\IfFileExists{fonts/LiberationSerif-Regular.ttf}{%
+  \setmainfont{LiberationSerif}[Path=fonts/,Extension=.ttf,UprightFont=*-Regular,ItalicFont=*-Italic,BoldFont=*-Bold,BoldItalicFont=*-BoldItalic]
+  \setsansfont{LiberationSans}[Path=fonts/,Extension=.ttf,UprightFont=*-Regular,ItalicFont=*-Italic,BoldFont=*-Bold,BoldItalicFont=*-BoldItalic]
+  \setmonofont{DejaVuSansMono}[Path=fonts/,Extension=.ttf,UprightFont=*,ItalicFont=*-Oblique,BoldFont=*-Bold,BoldItalicFont=*-BoldOblique]
+}{%
+  \setmainfont{Liberation Serif}
+  \setsansfont{Liberation Sans}
+  \setmonofont{DejaVu Sans Mono}
+}
+\linespread{1.25}
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
 % 连续正文不强制章/节换页；图表可与正文混排，且不跨越章节。
 \raggedbottom
 \setcounter{topnumber}{3}
@@ -44,8 +56,13 @@
 \renewcommand{\bottomfraction}{0.60}
 \renewcommand{\textfraction}{0.10}
 \renewcommand{\floatpagefraction}{0.70}
+\setlength{\textfloatsep}{13pt plus 3pt minus 2pt}
+\setlength{\floatsep}{11pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
 \graphicspath{{figures/}}
-\definecolor{BUPTBlue}{HTML}{003399}
+\definecolor{BUPTBlue}{HTML}{245B83}
 
 % 保持国科大模板的简洁排版气质，用 section 表示“章”，避免 book 类
 % 文档自动另起章页。正文引用仍用阿拉伯数字，以适应 1.1、1.2 编号。
@@ -53,7 +70,7 @@
   section = {
     name = {第,章},
     number = \chinese{section},
-    format = \centering\heiti\zihao{3},
+    format = \heiti\zihao{3}\color{BUPTBlue},
     beforeskip = 2.5ex plus 1ex minus .2ex,
     afterskip = 2ex plus .2ex,
   },
@@ -72,7 +89,8 @@
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 
-\captionsetup{font=small,labelsep=quad,justification=centering}
+\captionsetup{font=small,labelfont=bf,labelsep=quad,justification=justified,singlelinecheck=true,skip=6pt}
+\captionsetup[table]{position=top}
 \hypersetup{
   unicode=true,bookmarksnumbered=true,
   colorlinks=true,linkcolor=black,citecolor=black,urlcolor=BUPTBlue,
@@ -90,12 +108,11 @@
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0.35pt}
 
-% 固定封面位置；使用官方 Logo 时仅需将可验证的官方素材放入
-% figures/bupt_logo.pdf。若未找到文件，降级为纯文字校名，不
-% 伪造学校校徽；这便于 P2 在缺少素材时仍然稳定编译。
+% 固定封面位置；采用作者提供的横版校徽与校名素材。
+% 素材随工程放入 figures/bupt_logo.png；缺失时使用文字校名。
 \newcommand{\buptcoverlogo}{%
-  \IfFileExists{figures/bupt_logo.pdf}{%
-    \includegraphics[width=.66\textwidth,height=2.35cm,keepaspectratio]{figures/bupt_logo.pdf}%
+  \IfFileExists{figures/bupt_logo.png}{%
+    \includegraphics[width=.66\textwidth,height=2.35cm,keepaspectratio]{figures/bupt_logo.png}%
   }{%
     {\heiti\fontsize{27pt}{34pt}\selectfont \ReportUniversity}\par\vspace{0.3em}%
     {\footnotesize BEIJING UNIVERSITY OF POSTS AND TELECOMMUNICATIONS}%
@@ -138,4 +155,13 @@
 }
 \newcommand{\mainmatterbupt}{%
    \pagestyle{fancy}\pagenumbering{arabic}\setcounter{page}{1}
+}
+
+% 只缩小超宽表格，不把原本能容纳的表格放大。
+\newsavebox{\ReportTableBox}
+\newcommand{\ReportTable}[1]{%
+  \sbox{\ReportTableBox}{\input{#1}}%
+  \ifdim\wd\ReportTableBox>\linewidth
+    \resizebox{\linewidth}{!}{\usebox{\ReportTableBox}}%
+  \else\usebox{\ReportTableBox}\fi
 }

@@ -1,0 +1,221 @@
+{
+  "checked_at_beijing": "2026-11-03T00:27:49.912364+08:00",
+  "checks": 18608,
+  "issues": [],
+  "groups": {
+    "e0_baseline": 3,
+    "e1_dropout": 15,
+    "e2_norm": 12,
+    "e2_batch": 3,
+    "e2_lr": 9,
+    "e2_dropout_norm": 6,
+    "e3_search": 24,
+    "b2_depth": 6,
+    "e3_cv": 20,
+    "e3_final": 1,
+    "b1_ablation": 6,
+    "b2_shift": 2
+  },
+  "phase_counts": {
+    "1": 78,
+    "2": 20,
+    "3": 9
+  },
+  "tasks": 107,
+  "planned_epochs": 2930,
+  "observed_epochs": 2901,
+  "models_checked": 106,
+  "val_logits_checked": 105,
+  "test_logits_checked": 14,
+  "diverged": [
+    "e2_lr/none-lr0.4__s0"
+  ],
+  "nonfinite_history": [
+    {
+      "run": "e2_lr/none-lr0.4__s0",
+      "epoch": 1,
+      "field": "train_loss"
+    }
+  ],
+  "shortlist": [
+    "cfg00",
+    "cfg02",
+    "cfg08",
+    "cfg18"
+  ],
+  "winner": "cfg00",
+  "hp": {
+    "lr": 0.12089,
+    "weight_decay": 0.0009851,
+    "fc_dropout": 0.3,
+    "batch_size": 128,
+    "norm": "bn"
+  },
+  "frozen_hashes": {
+    "src/config.py": true,
+    "src/experiments.py": true,
+    "data/splits/cifar10_kfold5_v1.json": true,
+    "data/splits/cifar10_kfold5_v1.npz": true,
+    "data/splits/cifar10_split_v1.json": true,
+    "data/splits/cifar10_split_v1.npz": true
+  },
+  "raw_md5": {
+    "data/raw/cifar10/cifar-10-batches-py/batches.meta": "5ff9c542aee3614f3951f8cda6e48888",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_1": "c99cafc152244af753f735de768cd75f",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_2": "d4bba439e000b95fd0a9bffe97cbabec",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_3": "54ebc095f3ab1f0389bbae665268c751",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_4": "634d18415352ddfa80567beed471001a",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_5": "482c414d41f54cd18b22e5b47cb7c3cb",
+    "data/raw/cifar10/cifar-10-batches-py/readme.html": "82949b010606e8171045e61c60921d12",
+    "data/raw/cifar10/cifar-10-batches-py/test_batch": "40351d587109b95175f43aff81a1287e"
+  },
+  "label_sha256": "2b7cd2f24487317614016b72ffd53071c3062f592f0eb300c18a770d41ae1253",
+  "logical_split_sha256": "3aa61de0e8e9e4bae6e2712fbf67a29c10d3c792c192f40106360e5b7e076110",
+  "temperature_validation": {
+    "b1-0-base__s0": {
+      "grid_index": 352,
+      "boundary": false,
+      "val_nll_raw": 0.3659626245498657,
+      "val_nll_ts": 0.3060595302743259,
+      "test_acc_ts": 0.8844
+    },
+    "b1-1-flipcrop__s0": {
+      "grid_index": 343,
+      "boundary": false,
+      "val_nll_raw": 0.21184346079826355,
+      "val_nll_ts": 0.18644784810172338,
+      "test_acc_ts": 0.9264
+    },
+    "b1-2-cutout__s0": {
+      "grid_index": 323,
+      "boundary": false,
+      "val_nll_raw": 0.19489514827728271,
+      "val_nll_ts": 0.18746436013577467,
+      "test_acc_ts": 0.9301
+    },
+    "b1-3-ls__s0": {
+      "grid_index": 253,
+      "boundary": false,
+      "val_nll_raw": 0.2538248300552368,
+      "val_nll_ts": 0.18779276690733882,
+      "test_acc_ts": 0.9284
+    },
+    "b1-4-wide__s0": {
+      "grid_index": 253,
+      "boundary": false,
+      "val_nll_raw": 0.23121990263462067,
+      "val_nll_ts": 0.16341935935262267,
+      "test_acc_ts": 0.9387
+    },
+    "b1-5-resnet56__s0": {
+      "grid_index": 265,
+      "boundary": false,
+      "val_nll_raw": 0.28277266025543213,
+      "val_nll_ts": 0.23336107227898864,
+      "test_acc_ts": 0.9163
+    }
+  },
+  "tables": {
+    "dropout.tex": true,
+    "norm.tex": true,
+    "norm_batch.tex": true,
+    "norm_lr.tex": true,
+    "dropout_norm.tex": true,
+    "search.tex": true,
+    "cv.tex": true,
+    "final.tex": true,
+    "b1_ablation.tex": true,
+    "depth.tex": true,
+    "calibration.tex": true,
+    "shift.tex": true
+  },
+  "pdfs": {
+    "dropout_gap.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 13449,
+      "decoded_streams": 31,
+      "valid_header": true,
+      "eof": true
+    },
+    "norm_curves.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 14389,
+      "decoded_streams": 31,
+      "valid_header": true,
+      "eof": true
+    },
+    "baseline_curves.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 15303,
+      "decoded_streams": 35,
+      "valid_header": true,
+      "eof": true
+    },
+    "norm_lr.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 15462,
+      "decoded_streams": 36,
+      "valid_header": true,
+      "eof": true
+    },
+    "b1_ablation.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 14283,
+      "decoded_streams": 35,
+      "valid_header": true,
+      "eof": true
+    },
+    "depth_train_error.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 14844,
+      "decoded_streams": 31,
+      "valid_header": true,
+      "eof": true
+    },
+    "reliability.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 15554,
+      "decoded_streams": 36,
+      "valid_header": true,
+      "eof": true
+    },
+    "shift_accuracy.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 18429,
+      "decoded_streams": 45,
+      "valid_header": true,
+      "eof": true
+    }
+  },
+  "shift_internal": {
+    "max-none": {
+      "weighted_81_mean": 0.8306012345679012,
+      "mean_80_nonzero_shifts": 0.82992875,
+      "clean_from_cache": 0.8844,
+      "raw_shift_predictions_available": false
+    },
+    "max-flipcrop": {
+      "weighted_81_mean": 0.9191123456790123,
+      "mean_80_nonzero_shifts": 0.9190212499999999,
+      "clean_from_cache": 0.9264,
+      "raw_shift_predictions_available": false
+    },
+    "blur-none": {
+      "weighted_81_mean": 0.8588493827160494,
+      "mean_80_nonzero_shifts": 0.8582487500000001,
+      "clean_from_cache": 0.9069,
+      "raw_shift_predictions_available": false
+    },
+    "blur-flipcrop": {
+      "weighted_81_mean": 0.9231543209876543,
+      "mean_80_nonzero_shifts": 0.9231012499999999,
+      "clean_from_cache": 0.9274,
+      "raw_shift_predictions_available": false
+    }
+  },
+  "protected_files_unchanged": true,
+  "protected_file_count": 907,
+  "max_val_acc_error": 5.3119659448874756e-08,
+  "max_val_nll_error": 2.488729720084848e-07,
+  "test_cache_limitation": "Caches contain logits only; identity/order is consistent with code and raw labels but lacks per-cache labels, indices and model digest. No inference performed."
+}

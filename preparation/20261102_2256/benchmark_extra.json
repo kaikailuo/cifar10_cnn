@@ -1,0 +1,845 @@
+[
+  {
+    "name": "none128",
+    "jobs": 1,
+    "wall_s": 13.16060009226203,
+    "total_wall_including_startup_s": 20.475163577124476,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 231552,
+        "train_s": 12.003949917852879,
+        "train_images_s": 19289.65062205268,
+        "eval1000_s": 0.04045439511537552,
+        "peak_allocated_mb": 485.86865234375,
+        "peak_reserved_mb": 564.0
+      }
+    ],
+    "aggregate_train_images_s": 19289.65062205268,
+    "gpu_util_mean": 20.78048780487805,
+    "gpu_used_peak_mb": 1222.0,
+    "samples": [
+      [
+        22.0,
+        970.0
+      ],
+      [
+        31.0,
+        970.0
+      ],
+      [
+        24.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        20.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        19.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        28.0,
+        970.0
+      ],
+      [
+        20.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        22.0,
+        970.0
+      ],
+      [
+        39.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        20.0,
+        970.0
+      ],
+      [
+        32.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        21.0,
+        970.0
+      ],
+      [
+        0.0,
+        1222.0
+      ],
+      [
+        0.0,
+        1222.0
+      ],
+      [
+        2.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "name": "bn128",
+    "jobs": 1,
+    "wall_s": 12.725975392386317,
+    "total_wall_including_startup_s": 19.839840594679117,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 192640,
+        "train_s": 12.005881018936634,
+        "train_images_s": 16045.469690741797,
+        "eval1000_s": 0.005602523684501648,
+        "peak_allocated_mb": 488.01513671875,
+        "peak_reserved_mb": 614.0
+      }
+    ],
+    "aggregate_train_images_s": 16045.469690741797,
+    "gpu_util_mean": 19.26829268292683,
+    "gpu_used_peak_mb": 1272.0,
+    "samples": [
+      [
+        35.0,
+        1020.0
+      ],
+      [
+        21.0,
+        1020.0
+      ],
+      [
+        18.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        22.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        18.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        22.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        18.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        17.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        23.0,
+        1020.0
+      ],
+      [
+        23.0,
+        1020.0
+      ],
+      [
+        21.0,
+        1020.0
+      ],
+      [
+        18.0,
+        1020.0
+      ],
+      [
+        20.0,
+        1020.0
+      ],
+      [
+        19.0,
+        1020.0
+      ],
+      [
+        10.0,
+        1272.0
+      ],
+      [
+        0.0,
+        1272.0
+      ]
+    ]
+  },
+  {
+    "name": "heterogeneous",
+    "jobs": 6,
+    "wall_s": 13.458472844213247,
+    "total_wall_including_startup_s": 24.78982195071876,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 87808,
+        "train_s": 12.004199674353004,
+        "train_images_s": 7314.773361159759,
+        "eval1000_s": 0.02433064393699169,
+        "peak_allocated_mb": 486.11865234375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 88064,
+        "train_s": 12.014944469556212,
+        "train_images_s": 7329.53866105157,
+        "eval1000_s": 0.018273675814270973,
+        "peak_allocated_mb": 487.01513671875,
+        "peak_reserved_mb": 614.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 67968,
+        "train_s": 12.012274829670787,
+        "train_images_s": 5658.212200749553,
+        "eval1000_s": 0.052666617557406425,
+        "peak_allocated_mb": 1079.36669921875,
+        "peak_reserved_mb": 1502.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "ln",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 67840,
+        "train_s": 12.011627830564976,
+        "train_images_s": 5647.860636122381,
+        "eval1000_s": 0.05250192619860172,
+        "peak_allocated_mb": 1078.55517578125,
+        "peak_reserved_mb": 1252.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            128,
+            256,
+            512
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "flipcrop",
+          "cutout": 16,
+          "epochs": 30,
+          "batch_size": 256,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 59648,
+        "train_s": 12.00755476206541,
+        "train_images_s": 4967.539285220798,
+        "eval1000_s": 0.07447248324751854,
+        "peak_allocated_mb": 2008.56005859375,
+        "peak_reserved_mb": 4072.0
+      },
+      {
+        "config": {
+          "model": "resnet",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 56,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "flipcrop",
+          "cutout": 16,
+          "epochs": 30,
+          "batch_size": 256,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 59648,
+        "train_s": 12.004454161971807,
+        "train_images_s": 4968.822338374645,
+        "eval1000_s": 0.07131714001297951,
+        "peak_allocated_mb": 1497.37548828125,
+        "peak_reserved_mb": 1908.0
+      }
+    ],
+    "aggregate_train_images_s": 35869.995162442785,
+    "gpu_util_mean": 91.1219512195122,
+    "gpu_used_peak_mb": 13836.0,
+    "samples": [
+      [
+        28.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        100.0,
+        8936.0
+      ],
+      [
+        0.0,
+        13836.0
+      ],
+      [
+        0.0,
+        13836.0
+      ],
+      [
+        8.0,
+        2563.0
+      ]
+    ]
+  }
+]

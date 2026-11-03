@@ -1,2 +1,17 @@
-\section{复现资料与 AI 辅助说明}
-% TODO: 仓库地址、复现命令、AI 辅助声明。
+\section{复现信息与补充结果}
+\subsection{源码与复现}
+项目仓库：\url{https://github.com/kaikailuo/cifar10_cnn}。按仓库README安装依赖并放置数据后，运行下列命令。实验配置与逐轮结果位于\path{results/}，汇总见\path{results/analysis/analysis.json}。
+\begin{quote}\small\ttfamily
+python -m src.run --jobs 4
+\end{quote}
+
+\subsection{作者贡献与AI辅助}
+本项目使用AI工具辅助代码实现、实验运行管理、结果整理与报告撰写。实验目标、方案选择及关键技术决策由作者确定，作者负责审阅实验结果与最终提交内容。
+
+\subsection{随机搜索完整结果}
+\begin{center}\footnotesize\linespread{1}\selectfont
+\renewcommand{\arraystretch}{1.05}
+\captionsetup{type=table}
+\caption{24组随机搜索末轮验证结果（种子0，15轮），按验证准确率排序。}\label{tab:search}
+\ReportTable{tables/search}
+\end{center}

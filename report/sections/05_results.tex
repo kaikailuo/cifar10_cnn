@@ -1,6 +1,71 @@
+\Needspace{12\baselineskip}
 \section{实验结果与分析}
-% TODO: 基准 CNN、Dropout 对照、归一化对照、超参数搜索结果。
-\subsection{基准模型}
-\subsection{Dropout 对照}
-\subsection{归一化方法对照}
-\subsection{超参数搜索结果}
+\subsection{基准CNN与Dropout}
+\textbf{无增强基准存在明显过拟合。}三种子末轮验证准确率为$83.15\pm0.29\%$，固定训练子集的评估准确率为$100.00\pm0.00\%$，泛化差距$16.85\pm0.29$个百分点。图\ref{fig:baseline}中，训练曲线逐渐饱和，验证曲线仍明显低于训练曲线。
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{baseline_curves.pdf}
+\caption{基准、FC Dropout 0.5与BN的学习曲线（种子0）。实线为固定5000张训练子集的评估准确率，虚线为验证准确率。}\label{fig:baseline}
+\end{figure}
+\FloatBarrier
+\begin{table}[htbp]\centering\small
+\caption{Dropout对照：三种子均值$\pm$标准差，验证损失为三种子均值。}\label{tab:dropout}
+\ReportTable{tables/dropout}
+\end{table}
+
+表\ref{tab:dropout}中，FC Dropout由0增至0.7时，验证准确率逐步提高；0.7配置比基准高2.61个百分点。随机丢弃限制了隐藏特征间的共同适应，缩小了训练与验证差距。卷积0.1+FC0.5为$85.23\pm0.18\%$，与单用FC0.5的表现接近。卷积0.2组合的验证损失降至0.598，准确率为85.09\%，说明预测概率的改善与类别判断的改善并不同步。
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{dropout_gap.pdf}
+\caption{Dropout的验证表现。浅色点为三个种子，菱形及误差条为均值$\pm$标准差。}\label{fig:dropout}
+\end{figure}
+
+\FloatBarrier
+\subsection{归一化及其与训练配方的相互作用}
+表\ref{tab:norm}在固定学习率0.02、batch128、30轮条件下比较归一化。BN验证均值86.77\%，比无归一化高3.62个百分点；GN、LN、IN分别为85.95\%、85.35\%、84.52\%。归一化使中间激活的尺度更稳定，改善了当前配方的收敛与泛化；其中BN的验证均值最高。
+\begin{table}[htbp]\centering\small
+\caption{归一化对照：三种子均值$\pm$标准差。}\label{tab:norm}
+\ReportTable{tables/norm_report}
+\end{table}
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{norm_curves.pdf}
+\caption{各归一化方法的验证收敛曲线（种子0）。}\label{fig:norm}
+\end{figure}
+
+将batch从128改为16，并将学习率线性降至0.0025后，三种归一化的验证变化均在0.3个百分点以内（表\ref{tab:batch}）。BN在这组小批量配方下仍保持相近表现；GN与LN的统计量按样本计算，不依赖批内样本数。
+\begin{table}[htbp]\centering\small
+\caption{批大小配方比较，均为种子0；batch16同时采用八分之一学习率。}\label{tab:batch}
+\input{tables/norm_batch}
+\end{table}
+
+学习率对照见表\ref{tab:lr}及图\ref{fig:lr}。峰值0.1时none/BN/GN分别为85.22\%、89.00\%、87.28\%；峰值0.4配方下，无归一化网络在第1轮预热阶段出现NaN，而BN与GN仍得到88.50\%与84.82\%。归一化拓宽了本配方的可训练学习率范围；GN在0.4下准确率回落，表明步长增大后优化效果也会下降。
+\begin{table}[htbp]\centering\small
+\caption{不同峰值学习率的末轮验证准确率（\%），种子0；0.02列复用基础对照。}\label{tab:lr}
+\input{tables/norm_lr}
+\end{table}
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{norm_lr.pdf}
+\caption{学习率敏感性（种子0）。无归一化的0.4任务在第1轮出现NaN。}\label{fig:lr}
+\end{figure}
+
+表\ref{tab:combo}中，BN加FC Dropout0.5由$86.77\pm0.16\%$提高至$88.72\pm0.45\%$，再加卷积Dropout0.1则为$87.83\pm0.08\%$。BN与FC Dropout在本组实验中形成互补，而进一步增加卷积通道丢弃降低了验证均值。卷积层和分类器上的正则化强度需要匹配。
+\begin{table}[htbp]\centering\small
+\caption{Dropout与BN组合的末轮验证准确率（\%），三种子均值$\pm$样本标准差。}\label{tab:combo}
+\input{tables/dropout_norm}
+\end{table}
+
+\FloatBarrier
+\Needspace{7\baselineskip}
+\subsection{搜索、五折选型与最终测试}
+24组搜索结果完整列于附录表\ref{tab:search}。前4名为cfg00、cfg02、cfg08、cfg18，15轮验证准确率分别为89.42\%、88.64\%、88.42\%、88.34\%。cfg01采用GN、学习率0.1578和FC Dropout0.5，损失有限但末轮验证仅10.00\%，表现为优化塌缩。
+\begin{table}[htbp]\centering\footnotesize
+\caption{四候选的五折验证准确率（\%）：30轮、种子0，报告折间标准差。}\label{tab:cv}
+\input{tables/cv_report}
+\end{table}
+
+表\ref{tab:cv}中cfg00均值$88.51\pm0.18\%$，按预定规则被选中；cfg08为$88.39\pm0.22\%$，均值差为0.12个百分点。cfg00的精确配置为BN、batch128、学习率0.12089、weight decay=0.0009851、FC Dropout0.3。
+\begin{table}[htbp]\centering\small
+\caption{最终测试结果。折模型行报告五模型均值$\pm$标准差；A1为历史参考。}\label{tab:final}
+\ReportTable{tables/final}
+\end{table}
+
+在全部50000张训练图上重训后，单模型测试89.25\%、NLL0.405；五折模型概率集成测试90.20\%、NLL0.319，较各折单模型的均值88.28\%更高。概率平均综合了不同折模型的判断，降低单个模型预测误差的影响，同时增加推理成本。
+\FloatBarrier

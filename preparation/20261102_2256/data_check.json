@@ -1,0 +1,124 @@
+{
+  "train_shape": [
+    50000,
+    3,
+    32,
+    32
+  ],
+  "test_shape": [
+    10000,
+    3,
+    32,
+    32
+  ],
+  "holdout": [
+    45000,
+    5000
+  ],
+  "fold_sizes": [
+    10000,
+    10000,
+    10000,
+    10000,
+    10000
+  ],
+  "fold_class_counts": [
+    [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ]
+  ],
+  "files": {
+    "data/raw/cifar10/cifar-10-batches-py/batches.meta": "5ff9c542aee3614f3951f8cda6e48888",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_1": "c99cafc152244af753f735de768cd75f",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_2": "d4bba439e000b95fd0a9bffe97cbabec",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_3": "54ebc095f3ab1f0389bbae665268c751",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_4": "634d18415352ddfa80567beed471001a",
+    "data/raw/cifar10/cifar-10-batches-py/data_batch_5": "482c414d41f54cd18b22e5b47cb7c3cb",
+    "data/raw/cifar10/cifar-10-batches-py/readme.html": "82949b010606e8171045e61c60921d12",
+    "data/raw/cifar10/cifar-10-batches-py/test_batch": "40351d587109b95175f43aff81a1287e"
+  },
+  "split_sha256": "3aa61de0e8e9e4bae6e2712fbf67a29c10d3c792c192f40106360e5b7e076110",
+  "holdout_class_counts": {
+    "train_class_counts": [
+      4500,
+      4500,
+      4500,
+      4500,
+      4500,
+      4500,
+      4500,
+      4500,
+      4500,
+      4500
+    ],
+    "val_class_counts": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ]
+  }
+}

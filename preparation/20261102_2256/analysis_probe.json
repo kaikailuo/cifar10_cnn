@@ -1,0 +1,38 @@
+[
+  {
+    "group": "b1_ablation",
+    "name": "b1-0-base__s0",
+    "norm": "bn",
+    "samples_per_shift": 10000,
+    "shifts": 3,
+    "wall_s": 0.17156265303492546,
+    "estimated_81_shifts_s": 4.632191631942987
+  },
+  {
+    "group": "b1_ablation",
+    "name": "b1-1-flipcrop__s0",
+    "norm": "bn",
+    "samples_per_shift": 10000,
+    "shifts": 3,
+    "wall_s": 0.1545010358095169,
+    "estimated_81_shifts_s": 4.1715279668569565
+  },
+  {
+    "group": "b2_shift",
+    "name": "blur-none__s0",
+    "norm": "bn",
+    "samples_per_shift": 10000,
+    "shifts": 3,
+    "wall_s": 0.24189242534339428,
+    "estimated_81_shifts_s": 6.5310954842716455
+  },
+  {
+    "group": "b2_shift",
+    "name": "blur-flipcrop__s0",
+    "norm": "bn",
+    "samples_per_shift": 10000,
+    "shifts": 3,
+    "wall_s": 0.24069258198142052,
+    "estimated_81_shifts_s": 6.498699713498354
+  }
+]

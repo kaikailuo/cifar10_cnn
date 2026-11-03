@@ -1,0 +1,30 @@
+{
+  "python": "/root/miniconda3/bin/python",
+  "version": "3.12.3 | packaged by Anaconda, Inc. | (main, May  6 2024, 19:46:43) [GCC 11.2.0]",
+  "torch": "2.8.0+cu128",
+  "numpy": "2.3.2",
+  "cuda": "12.8",
+  "available": true,
+  "arch": [
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "device": "NVIDIA GeForce RTX 5090",
+  "capability": [
+    12,
+    0
+  ],
+  "bf16": true,
+  "affinity": 128,
+  "output_dtype": "torch.bfloat16",
+  "loss": 2.3252553939819336,
+  "finite": true,
+  "updated": true,
+  "tensor_device": "cuda:0",
+  "memory_allocated": 17444864
+}

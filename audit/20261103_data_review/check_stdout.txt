@@ -1,0 +1,9 @@
+tables and figures written to /root/autodl-tmp/cifar10_cnn/audit/20261103_data_review/rendered/report
+Traceback (most recent call last):
+  File "/root/autodl-tmp/cifar10_cnn/audit/20261103_data_review/check.py", line 227, in <module>
+    after={str(p.relative_to(ROOT)):digest(p) for p in protected}; unchanged=before==after; check(unchanged,'protected files changed')
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/cifar10_cnn/audit/20261103_data_review/check.py", line 23, in check
+    if not ok: issues.append(msg)
+           ^^
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()

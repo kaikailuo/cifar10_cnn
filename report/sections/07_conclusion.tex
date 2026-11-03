@@ -1,2 +1,30 @@
-\section{总结}
-% TODO: 主要结论与局限。
+\Needspace{30\baselineskip}
+\section{结论}
+本实验完成了CNN构建、Dropout与归一化对照及交叉验证选型，并通过增强、加宽和集成提升分类性能。进一步围绕深度退化、置信度失准和平移敏感开展改进实验，形成从模型训练、泛化分析到问题验证的完整实践。各项任务的完成内容与主要结论汇总于表\ref{tab:requirements}。
+
+\begin{table}[H]\centering\small
+\linespread{1.10}\selectfont
+\renewcommand{\arraystretch}{1.12}
+\caption{作业任务、完成内容与主要结论}\label{tab:requirements}
+\begin{tabularx}{\linewidth}{@{}p{2.8cm}X p{1.8cm}@{}}
+\toprule
+作业任务 & 完成工作与主要结果 & 正文证据\\
+\midrule
+\textbf{必做：CNN分类} & 实现卷积、池化、分类层及训练流程；基准三种子验证准确率为$83.15\pm0.29\%$。 & 图\ref{fig:architecture}\newline 表\ref{tab:dropout}\\
+\addlinespace[5pt]
+\textbf{必做：Dropout} & 比较FC概率0.3/0.5/0.7及卷积Dropout组合；FC~0.7验证准确率为$85.76\pm0.16\%$，较基准提高2.61个百分点，缩小训练与验证差距。 & 表\ref{tab:dropout}\\
+\addlinespace[5pt]
+\textbf{必做：归一化} & 比较BN/LN/IN/GN及批大小、学习率和Dropout组合。BN验证准确率为$86.77\pm0.16\%$，BN与FC~0.5组合为$88.72\pm0.45\%$。 & 表\ref{tab:norm}--\ref{tab:combo}\\
+\addlinespace[5pt]
+\textbf{必做：交叉验证} & 24组随机搜索后，对前4名做五折选型；选定配置在全部50000张训练图上重训，测试准确率为89.25\%。 & 表\ref{tab:cv}、\ref{tab:final}\\
+\midrule
+\textbf{附加一：}\newline\textbf{性能提升} & 比较增强、Cutout、标签平滑、加宽及集成。裁剪翻转使同组测试准确率由88.44\%升至92.64\%；加宽模型与三模型集成分别为93.87\%、94.36\%。 & 表\ref{tab:b1}\\
+\addlinespace[5pt]
+\textbf{附加二：}\newline\textbf{问题分析与改进} & 深度退化：残差连接将56层网络验证错误率由19.58\%降至7.62\%。\newline
+置信度失准：温度缩放将Cutout模型ECE由1.98\%降至0.54\%。\newline
+平移敏感：无增强时，抗混叠池化将平移平均准确率由83.06\%提高至85.88\%。 & 表\ref{tab:depth}--\ref{tab:shift}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+部分比较采用单种子，批大小对照同时调整了学习率，B1的架构替换也改变了模型容量。搜索和五折验证共用训练池，固定验证集重复参与方法比较与温度拟合。准备阶段冒烟曾评估测试集前500张；正式结果来自全部训练完成后的完整测试集分析。

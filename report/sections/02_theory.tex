@@ -1,5 +1,42 @@
-\section{理论基础}
-% TODO: 卷积与池化、Dropout、各类归一化方法（BN / LN / GN / IN）。
-\subsection{卷积神经网络}
-\subsection{Dropout}
-\subsection{归一化方法}
+\section{模型原理与方法}
+\subsection{卷积、池化与分类目标}
+设输入特征为$x$，卷积层第$k$个输出通道为
+\begin{equation}
+ z_{k,i,j}=b_k+\sum_c\sum_{u,v}W_{k,c,u,v}x_{c,i+u,j+v},\qquad a=\max(0,z).
+\end{equation}
+小卷积核逐层组合局部特征，池化降低空间尺寸。本文使用3$\times$3卷积和ReLU，初始化采用针对整流网络的Kaiming方法\cite{he2015rectifiers}。分类器产生10维logits $z$，softmax输出$p_k=\exp(z_k)/\sum_j\exp(z_j)$，普通训练目标为交叉熵$-\log p_y$。步幅下采样和边界处理会影响分类器的平移稳定性。
+
+\subsection{Dropout与归一化}
+Dropout在训练时以概率$p$丢弃激活，并对保留值缩放：
+\begin{equation}
+ \widetilde h=\frac{m\odot h}{1-p},\qquad m_i\sim\operatorname{Bernoulli}(1-p).
+\end{equation}
+评估时关闭随机丢弃。该方法限制特征间的共同适应，可用于缓解过拟合\cite{srivastava2014dropout}。本文分别在全连接隐藏层之后使用元素Dropout，在卷积段池化之后使用整通道Dropout2d。
+
+各归一化方法都可概括为
+\begin{equation}
+ \widehat x_i=\frac{x_i-\mu_{\mathcal S}}{\sqrt{\sigma^2_{\mathcal S}+\epsilon}},\qquad
+ y_i=\gamma_c\widehat x_i+\beta_c,
+\end{equation}
+差别主要在统计集合$\mathcal S$及评估时统计量的处理。对NCHW张量，本文采用的具体变体见表\ref{tab:normdef}。
+\begin{table}[htbp]\centering\small
+\caption{本文归一化实现的统计维度与仿射参数}\label{tab:normdef}
+\begin{tabularx}{\linewidth}{llX}
+\toprule 方法 & 统计范围 & 实现与评估方式\\\midrule
+BN & 同一通道的$N,H,W$ & BatchNorm2d；评估使用运行均值与方差\\
+LN & 单一样本的$C,H,W$ & GroupNorm(1,C)，仿射参数仅逐通道\\
+IN & 单一样本单一通道的$H,W$ & GroupNorm(C,C)，不使用运行统计\\
+GN & 单一样本每组通道及$H,W$ & GroupNorm(8,C)，不依赖批统计\\
+\bottomrule\end{tabularx}\end{table}
+\FloatBarrier
+BN、LN、IN与GN分别依据相应文献\cite{ioffe2015batchnorm,ba2016layernorm,ulyanov2016instancenorm,wu2018groupnorm}。BN与Dropout的相互作用与插入位置及统计偏移有关\cite{li2019disharmony}。
+
+\subsection{性能提升及问题改进}
+随机裁剪和翻转扩展训练时的图像变化；Cutout随机遮挡局部区域\cite{devries2017cutout}。标签平滑以$q_k=(1-\varepsilon)\mathbf1[k=y]+\varepsilon/10$替换硬标签，本文取$\varepsilon=0.1$\cite{szegedy2016rethinking}。增宽网络增加特征容量，残差块则用$h_{l+1}=\operatorname{ReLU}(F(h_l)+S(h_l))$改善深层优化；$S$在尺寸变化时为投影捷径\cite{he2016resnet}。
+
+分类准确率只依赖最大概率类别，校准则关注概率与实际正确率是否匹配。负对数似然（NLL）与15等宽置信度分箱的期望校准误差（ECE）分别为
+\begin{equation}
+ \operatorname{NLL}=-\frac1n\sum_i\log p_{i,y_i},\qquad
+ \operatorname{ECE}=\sum_{b=1}^{15}\frac{|B_b|}{n}|\operatorname{acc}(B_b)-\operatorname{conf}(B_b)|.
+\end{equation}
+温度缩放用$\operatorname{softmax}(z/T)$调整概率，$T>0$由验证NLL选择\cite{guo2017calibration}。正温度不改变argmax，因而不改变分类准确率。抗混叠下采样则在降采样前加入低通滤波\cite{zhang2019shift}，本文用它检验CNN对小幅输入平移的稳定性。

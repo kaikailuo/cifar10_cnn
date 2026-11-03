@@ -1,0 +1,14 @@
+{
+  "source": "C:\\Users\\kaikailuo\\.codex\\worktrees\\37d0\\cifar10_cnn",
+  "target": "D:\\Projects\\cifar10_cnn",
+  "verified_files": 1746,
+  "copied_files": 1707,
+  "unchanged_files": 39,
+  "replaced": [
+    "src/run.py",
+    "src/train.py"
+  ],
+  "formal_runs": 107,
+  "tables": 12,
+  "figures": 8
+}

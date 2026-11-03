@@ -1,0 +1,15 @@
+{
+  "diverged": false,
+  "epochs_run": 40,
+  "params": 6678154,
+  "train_time_s": 208.79802421294153,
+  "final_train_eval_acc": 0.991599977016449,
+  "final_train_eval_loss": 0.11932238936424255,
+  "final_val_acc": 0.9495999813079834,
+  "final_val_loss": 0.23121990263462067,
+  "device": "cuda",
+  "torch": "2.8.0+cu128",
+  "best_val_acc": 0.9495999813079834,
+  "best_epoch": 40,
+  "gap": 0.041999995708465576
+}

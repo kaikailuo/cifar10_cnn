@@ -1,0 +1,11 @@
+{
+  "report_exists": true,
+  "report_characters": 22606,
+  "absolute_links": 63,
+  "missing_link_targets": [],
+  "original_protected_files": 907,
+  "changed_original_files": [],
+  "tasks_csv_rows": 107,
+  "formal_changes_relative_to_initial": "Only new audit/ directory; preexisting run.py/train.py modifications retained.",
+  "no_training_smoke_or_model_inference_during_audit": true
+}

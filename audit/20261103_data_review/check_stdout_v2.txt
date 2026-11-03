@@ -1,0 +1,83 @@
+tables and figures written to /root/autodl-tmp/cifar10_cnn/audit/20261103_data_review/verification_v2/rendered/report
+{
+  "checks": 18608,
+  "issues": [],
+  "tasks": 107,
+  "models": 106,
+  "val": 105,
+  "test": 14,
+  "tables": {
+    "dropout.tex": true,
+    "norm.tex": true,
+    "norm_batch.tex": true,
+    "norm_lr.tex": true,
+    "dropout_norm.tex": true,
+    "search.tex": true,
+    "cv.tex": true,
+    "final.tex": true,
+    "b1_ablation.tex": true,
+    "depth.tex": true,
+    "calibration.tex": true,
+    "shift.tex": true
+  },
+  "pdfs": {
+    "dropout_gap.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 13449,
+      "decoded_streams": 31,
+      "valid_header": true,
+      "eof": true
+    },
+    "norm_curves.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 14389,
+      "decoded_streams": 31,
+      "valid_header": true,
+      "eof": true
+    },
+    "baseline_curves.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 15303,
+      "decoded_streams": 35,
+      "valid_header": true,
+      "eof": true
+    },
+    "norm_lr.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 15462,
+      "decoded_streams": 36,
+      "valid_header": true,
+      "eof": true
+    },
+    "b1_ablation.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 14283,
+      "decoded_streams": 35,
+      "valid_header": true,
+      "eof": true
+    },
+    "depth_train_error.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 14844,
+      "decoded_streams": 31,
+      "valid_header": true,
+      "eof": true
+    },
+    "reliability.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 15554,
+      "decoded_streams": 36,
+      "valid_header": true,
+      "eof": true
+    },
+    "shift_accuracy.pdf": {
+      "equal_except_creation_date": true,
+      "bytes": 18429,
+      "decoded_streams": 45,
+      "valid_header": true,
+      "eof": true
+    }
+  },
+  "winner": "cfg00",
+  "unchanged": true
+}

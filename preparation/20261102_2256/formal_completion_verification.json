@@ -1,0 +1,18 @@
+{
+  "checked_at_beijing": "2026-11-03T00:18:14.156090+08:00",
+  "completed": 107,
+  "tables": 12,
+  "figures": 8,
+  "analysis_keys": [
+    "final",
+    "b1",
+    "calibration",
+    "shift"
+  ],
+  "diverged": [
+    "results/e2_lr/none-lr0.4__s0"
+  ],
+  "finished_at_beijing": "2026-11-03T00:14:28.422169+08:00",
+  "total_wall_minutes": 55.62763382196427,
+  "frozen_definitions_and_splits_verified": true
+}

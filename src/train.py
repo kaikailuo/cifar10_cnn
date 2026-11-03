@@ -103,7 +103,7 @@ def train_run(run_dir: Path, device: torch.device) -> dict:
     start_epoch = 0
     ckpt_path = run_dir / "checkpoint.pt"
     if ckpt_path.exists():
-        ckpt = torch.load(ckpt_path, map_location=device)
+        ckpt = torch.load(ckpt_path, map_location="cpu")
         model.load_state_dict(ckpt["model"])
         optimizer.load_state_dict(ckpt["optimizer"])
         scheduler.load_state_dict(ckpt["scheduler"])

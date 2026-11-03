@@ -1,0 +1,2937 @@
+[
+  {
+    "name": "mixed",
+    "jobs": 2,
+    "wall_s": 12.970623444765806,
+    "total_wall_including_startup_s": 20.185444550588727,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 223872,
+        "train_s": 12.006890997290611,
+        "train_images_s": 18645.292944736266,
+        "eval1000_s": 0.007353389635682106,
+        "peak_allocated_mb": 485.86865234375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 197760,
+        "train_s": 12.002278992906213,
+        "train_images_s": 16476.87077736515,
+        "eval1000_s": 0.006672397255897522,
+        "peak_allocated_mb": 488.01513671875,
+        "peak_reserved_mb": 614.0
+      }
+    ],
+    "aggregate_train_images_s": 35115.83473982919,
+    "gpu_util_mean": 80.29268292682927,
+    "gpu_used_peak_mb": 2489.0,
+    "samples": [
+      [
+        36.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        88.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        81.0,
+        1985.0
+      ],
+      [
+        84.0,
+        1985.0
+      ],
+      [
+        85.0,
+        1985.0
+      ],
+      [
+        85.0,
+        1985.0
+      ],
+      [
+        83.0,
+        1985.0
+      ],
+      [
+        82.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        87.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        87.0,
+        1985.0
+      ],
+      [
+        87.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        87.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        87.0,
+        1985.0
+      ],
+      [
+        85.0,
+        1985.0
+      ],
+      [
+        85.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        80.0,
+        1985.0
+      ],
+      [
+        84.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        87.0,
+        1985.0
+      ],
+      [
+        90.0,
+        1985.0
+      ],
+      [
+        94.0,
+        1985.0
+      ],
+      [
+        88.0,
+        1985.0
+      ],
+      [
+        84.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        84.0,
+        1985.0
+      ],
+      [
+        84.0,
+        1985.0
+      ],
+      [
+        84.0,
+        1985.0
+      ],
+      [
+        86.0,
+        1985.0
+      ],
+      [
+        0.0,
+        2489.0
+      ],
+      [
+        0.0,
+        1271.0
+      ]
+    ]
+  },
+  {
+    "name": "mixed",
+    "jobs": 4,
+    "wall_s": 13.22985284216702,
+    "total_wall_including_startup_s": 20.951065653935075,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 190592,
+        "train_s": 12.00300900824368,
+        "train_images_s": 15878.685075475758,
+        "eval1000_s": 0.011506309732794762,
+        "peak_allocated_mb": 485.86865234375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 186240,
+        "train_s": 12.003767834976315,
+        "train_images_s": 15515.128463026249,
+        "eval1000_s": 0.010050036013126373,
+        "peak_allocated_mb": 488.01513671875,
+        "peak_reserved_mb": 614.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 204544,
+        "train_s": 12.002222839742899,
+        "train_images_s": 17042.176497731278,
+        "eval1000_s": 0.014390870928764343,
+        "peak_allocated_mb": 487.36865234375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 186368,
+        "train_s": 12.001731153577566,
+        "train_images_s": 15528.426492410308,
+        "eval1000_s": 0.01155608519911766,
+        "peak_allocated_mb": 487.01513671875,
+        "peak_reserved_mb": 614.0
+      }
+    ],
+    "aggregate_train_images_s": 63958.584550674525,
+    "gpu_util_mean": 92.15,
+    "gpu_used_peak_mb": 4974.0,
+    "samples": [
+      [
+        30.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        100.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        97.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        98.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        99.0,
+        3966.0
+      ],
+      [
+        2.0,
+        4974.0
+      ],
+      [
+        0.0,
+        1272.0
+      ]
+    ]
+  },
+  {
+    "name": "mixed",
+    "jobs": 6,
+    "wall_s": 13.319671055302024,
+    "total_wall_including_startup_s": 21.443568279966712,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 148224,
+        "train_s": 12.009364081546664,
+        "train_images_s": 12342.368754375419,
+        "eval1000_s": 0.01658620871603489,
+        "peak_allocated_mb": 487.36865234375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 148096,
+        "train_s": 12.0040671993047,
+        "train_images_s": 12337.151862043727,
+        "eval1000_s": 0.021236153319478035,
+        "peak_allocated_mb": 488.01513671875,
+        "peak_reserved_mb": 614.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 148096,
+        "train_s": 12.004782827571034,
+        "train_images_s": 12336.416420617976,
+        "eval1000_s": 0.016783500090241432,
+        "peak_allocated_mb": 486.42333984375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 147968,
+        "train_s": 12.000552644953132,
+        "train_images_s": 12330.09881942632,
+        "eval1000_s": 0.014512592926621437,
+        "peak_allocated_mb": 487.01513671875,
+        "peak_reserved_mb": 614.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "none",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 148096,
+        "train_s": 12.000140680000186,
+        "train_images_s": 12341.188653464827,
+        "eval1000_s": 0.014180324971675873,
+        "peak_allocated_mb": 486.42333984375,
+        "peak_reserved_mb": 564.0
+      },
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 147968,
+        "train_s": 12.003416562452912,
+        "train_images_s": 12327.156958198788,
+        "eval1000_s": 0.016609903424978256,
+        "peak_allocated_mb": 487.01513671875,
+        "peak_reserved_mb": 614.0
+      }
+    ],
+    "aggregate_train_images_s": 73979.60407955076,
+    "gpu_util_mean": 90.45238095238095,
+    "gpu_used_peak_mb": 7458.0,
+    "samples": [
+      [
+        75.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        99.0,
+        5946.0
+      ],
+      [
+        57.0,
+        7458.0
+      ],
+      [
+        0.0,
+        7458.0
+      ],
+      [
+        0.0,
+        7458.0
+      ],
+      [
+        4.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "name": "gn128",
+    "jobs": 1,
+    "wall_s": 13.057177312672138,
+    "total_wall_including_startup_s": 20.07081531174481,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 181760,
+        "train_s": 12.005820538848639,
+        "train_images_s": 15139.32341499341,
+        "eval1000_s": 0.011047489941120148,
+        "peak_allocated_mb": 1078.60888671875,
+        "peak_reserved_mb": 1252.0
+      }
+    ],
+    "aggregate_train_images_s": 15139.32341499341,
+    "gpu_util_mean": 29.69047619047619,
+    "gpu_used_peak_mb": 1910.0,
+    "samples": [
+      [
+        23.0,
+        1160.0
+      ],
+      [
+        32.0,
+        1160.0
+      ],
+      [
+        26.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        56.0,
+        1160.0
+      ],
+      [
+        46.0,
+        1160.0
+      ],
+      [
+        31.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        33.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        48.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        30.0,
+        1160.0
+      ],
+      [
+        30.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        54.0,
+        1160.0
+      ],
+      [
+        42.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        30.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        30.0,
+        1160.0
+      ],
+      [
+        40.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        30.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        43.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        0.0,
+        1910.0
+      ],
+      [
+        0.0,
+        1910.0
+      ],
+      [
+        0.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "name": "ln128",
+    "jobs": 1,
+    "wall_s": 12.837977513670921,
+    "total_wall_including_startup_s": 20.055289002135396,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "ln",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 156672,
+        "train_s": 12.00299054570496,
+        "train_images_s": 13052.747096935944,
+        "eval1000_s": 0.011323818936944008,
+        "peak_allocated_mb": 1078.55517578125,
+        "peak_reserved_mb": 1252.0
+      }
+    ],
+    "aggregate_train_images_s": 13052.747096935944,
+    "gpu_util_mean": 26.73170731707317,
+    "gpu_used_peak_mb": 1910.0,
+    "samples": [
+      [
+        24.0,
+        1160.0
+      ],
+      [
+        26.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        29.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        31.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        28.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        0.0,
+        1910.0
+      ],
+      [
+        0.0,
+        1910.0
+      ]
+    ]
+  },
+  {
+    "name": "in128",
+    "jobs": 1,
+    "wall_s": 12.728481628000736,
+    "total_wall_including_startup_s": 19.94182873144746,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "in",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 171904,
+        "train_s": 12.00170404650271,
+        "train_images_s": 14323.299369316872,
+        "eval1000_s": 0.011593736708164215,
+        "peak_allocated_mb": 1079.79345703125,
+        "peak_reserved_mb": 1504.0
+      }
+    ],
+    "aggregate_train_images_s": 14323.299369316872,
+    "gpu_util_mean": 29.875,
+    "gpu_used_peak_mb": 2162.0,
+    "samples": [
+      [
+        16.0,
+        1162.0
+      ],
+      [
+        31.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        31.0,
+        1162.0
+      ],
+      [
+        31.0,
+        1162.0
+      ],
+      [
+        34.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        30.0,
+        1162.0
+      ],
+      [
+        30.0,
+        1162.0
+      ],
+      [
+        30.0,
+        1162.0
+      ],
+      [
+        27.0,
+        1162.0
+      ],
+      [
+        35.0,
+        1162.0
+      ],
+      [
+        36.0,
+        1162.0
+      ],
+      [
+        36.0,
+        1162.0
+      ],
+      [
+        36.0,
+        1162.0
+      ],
+      [
+        40.0,
+        1162.0
+      ],
+      [
+        34.0,
+        1162.0
+      ],
+      [
+        31.0,
+        1162.0
+      ],
+      [
+        35.0,
+        1162.0
+      ],
+      [
+        33.0,
+        1162.0
+      ],
+      [
+        56.0,
+        1162.0
+      ],
+      [
+        37.0,
+        1162.0
+      ],
+      [
+        33.0,
+        1162.0
+      ],
+      [
+        28.0,
+        1162.0
+      ],
+      [
+        26.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        30.0,
+        1162.0
+      ],
+      [
+        31.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        31.0,
+        1162.0
+      ],
+      [
+        27.0,
+        1162.0
+      ],
+      [
+        30.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        29.0,
+        1162.0
+      ],
+      [
+        28.0,
+        1162.0
+      ],
+      [
+        30.0,
+        1162.0
+      ],
+      [
+        0.0,
+        2162.0
+      ],
+      [
+        0.0,
+        2162.0
+      ]
+    ]
+  },
+  {
+    "name": "bn16",
+    "jobs": 1,
+    "wall_s": 12.874148612841964,
+    "total_wall_including_startup_s": 19.786380467936397,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 16,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 25104,
+        "train_s": 12.003158977255225,
+        "train_images_s": 2091.4494299017074,
+        "eval1000_s": 0.005773941054940224,
+        "peak_allocated_mb": 486.4443359375,
+        "peak_reserved_mb": 580.0
+      }
+    ],
+    "aggregate_train_images_s": 2091.4494299017074,
+    "gpu_util_mean": 7.829268292682927,
+    "gpu_used_peak_mb": 1238.0,
+    "samples": [
+      [
+        8.0,
+        986.0
+      ],
+      [
+        9.0,
+        986.0
+      ],
+      [
+        9.0,
+        986.0
+      ],
+      [
+        21.0,
+        986.0
+      ],
+      [
+        9.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        9.0,
+        986.0
+      ],
+      [
+        9.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        9.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        10.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        7.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        8.0,
+        986.0
+      ],
+      [
+        0.0,
+        1238.0
+      ],
+      [
+        0.0,
+        1238.0
+      ]
+    ]
+  },
+  {
+    "name": "gn64",
+    "jobs": 1,
+    "wall_s": 12.919225387275219,
+    "total_wall_including_startup_s": 20.133873431012034,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 64,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 92800,
+        "train_s": 12.006574016064405,
+        "train_images_s": 7729.099064882007,
+        "eval1000_s": 0.010875064879655838,
+        "peak_allocated_mb": 1077.8349609375,
+        "peak_reserved_mb": 1252.0
+      }
+    ],
+    "aggregate_train_images_s": 7729.099064882007,
+    "gpu_util_mean": 18.0,
+    "gpu_used_peak_mb": 1910.0,
+    "samples": [
+      [
+        13.0,
+        1160.0
+      ],
+      [
+        19.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        19.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        21.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        19.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        15.0,
+        1160.0
+      ],
+      [
+        20.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        21.0,
+        1160.0
+      ],
+      [
+        23.0,
+        1160.0
+      ],
+      [
+        21.0,
+        1160.0
+      ],
+      [
+        27.0,
+        1160.0
+      ],
+      [
+        22.0,
+        1160.0
+      ],
+      [
+        23.0,
+        1160.0
+      ],
+      [
+        23.0,
+        1160.0
+      ],
+      [
+        16.0,
+        1160.0
+      ],
+      [
+        20.0,
+        1160.0
+      ],
+      [
+        32.0,
+        1160.0
+      ],
+      [
+        17.0,
+        1160.0
+      ],
+      [
+        23.0,
+        1910.0
+      ],
+      [
+        0.0,
+        1910.0
+      ],
+      [
+        0.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "name": "bn256",
+    "jobs": 1,
+    "wall_s": 12.976750219240785,
+    "total_wall_including_startup_s": 20.19164171628654,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "none",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 256,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 410624,
+        "train_s": 12.001023165881634,
+        "train_images_s": 34215.749301058386,
+        "eval1000_s": 0.005614282563328743,
+        "peak_allocated_mb": 488.26611328125,
+        "peak_reserved_mb": 788.0
+      }
+    ],
+    "aggregate_train_images_s": 34215.749301058386,
+    "gpu_util_mean": 33.0,
+    "gpu_used_peak_mb": 1446.0,
+    "samples": [
+      [
+        8.0,
+        1194.0
+      ],
+      [
+        57.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        31.0,
+        1194.0
+      ],
+      [
+        34.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        33.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        33.0,
+        1194.0
+      ],
+      [
+        63.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        36.0,
+        1194.0
+      ],
+      [
+        41.0,
+        1194.0
+      ],
+      [
+        38.0,
+        1194.0
+      ],
+      [
+        34.0,
+        1194.0
+      ],
+      [
+        45.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        34.0,
+        1194.0
+      ],
+      [
+        33.0,
+        1194.0
+      ],
+      [
+        33.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        33.0,
+        1194.0
+      ],
+      [
+        55.0,
+        1194.0
+      ],
+      [
+        29.0,
+        1194.0
+      ],
+      [
+        31.0,
+        1194.0
+      ],
+      [
+        30.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        31.0,
+        1194.0
+      ],
+      [
+        31.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        32.0,
+        1194.0
+      ],
+      [
+        31.0,
+        1194.0
+      ],
+      [
+        31.0,
+        1194.0
+      ],
+      [
+        37.0,
+        1194.0
+      ],
+      [
+        12.0,
+        1446.0
+      ],
+      [
+        0.0,
+        1446.0
+      ],
+      [
+        3.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "name": "wide256",
+    "jobs": 1,
+    "wall_s": 12.898119678720832,
+    "total_wall_including_startup_s": 20.912117909640074,
+    "workers": [
+      {
+        "config": {
+          "model": "vgg",
+          "widths": [
+            128,
+            256,
+            512
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 20,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "flipcrop",
+          "cutout": 16,
+          "epochs": 30,
+          "batch_size": 256,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 209408,
+        "train_s": 12.007162036374211,
+        "train_images_s": 17440.257686672703,
+        "eval1000_s": 0.022179467603564262,
+        "peak_allocated_mb": 2007.15380859375,
+        "peak_reserved_mb": 4072.0
+      }
+    ],
+    "aggregate_train_images_s": 17440.257686672703,
+    "gpu_util_mean": 88.2439024390244,
+    "gpu_used_peak_mb": 4730.0,
+    "samples": [
+      [
+        65.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        92.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        92.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        92.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        93.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        95.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        94.0,
+        2480.0
+      ],
+      [
+        0.0,
+        4730.0
+      ],
+      [
+        8.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "name": "res56_256",
+    "jobs": 1,
+    "wall_s": 12.725127624347806,
+    "total_wall_including_startup_s": 23.14309242554009,
+    "workers": [
+      {
+        "config": {
+          "model": "resnet",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 56,
+          "residual": true,
+          "norm": "gn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "flipcrop",
+          "cutout": 16,
+          "epochs": 30,
+          "batch_size": 256,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 70400,
+        "train_s": 12.04463485069573,
+        "train_images_s": 5844.926049869708,
+        "eval1000_s": 0.02055259980261326,
+        "peak_allocated_mb": 1497.37548828125,
+        "peak_reserved_mb": 1908.0
+      }
+    ],
+    "aggregate_train_images_s": 5844.926049869708,
+    "gpu_util_mean": 28.926829268292682,
+    "gpu_used_peak_mb": 2566.0,
+    "samples": [
+      [
+        22.0,
+        2170.0
+      ],
+      [
+        35.0,
+        2170.0
+      ],
+      [
+        31.0,
+        2170.0
+      ],
+      [
+        31.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        31.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        37.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        31.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        30.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        31.0,
+        2170.0
+      ],
+      [
+        29.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        37.0,
+        2170.0
+      ],
+      [
+        41.0,
+        2170.0
+      ],
+      [
+        34.0,
+        2170.0
+      ],
+      [
+        32.0,
+        2170.0
+      ],
+      [
+        28.0,
+        2170.0
+      ],
+      [
+        27.0,
+        2170.0
+      ],
+      [
+        11.0,
+        2566.0
+      ],
+      [
+        0.0,
+        2566.0
+      ]
+    ]
+  },
+  {
+    "name": "res56_bn",
+    "jobs": 1,
+    "wall_s": 12.897116089239717,
+    "total_wall_including_startup_s": 23.417651534080505,
+    "workers": [
+      {
+        "config": {
+          "model": "resnet",
+          "widths": [
+            64,
+            128,
+            256
+          ],
+          "convs_per_stage": 2,
+          "fc_hidden": 256,
+          "depth": 56,
+          "residual": true,
+          "norm": "bn",
+          "gn_groups": 8,
+          "pool": "max",
+          "conv_dropout": 0.0,
+          "fc_dropout": 0.0,
+          "weight_decay": 0.0005,
+          "label_smoothing": 0.0,
+          "augment": "flipcrop",
+          "cutout": 0,
+          "epochs": 30,
+          "batch_size": 128,
+          "lr": 0.02,
+          "momentum": 0.9,
+          "warmup_epochs": 2,
+          "split": "holdout",
+          "fold": null,
+          "train_limit": null,
+          "val_limit": null,
+          "seed": 0
+        },
+        "samples": 41472,
+        "train_s": 12.0177654158324,
+        "train_images_s": 3450.8911236829526,
+        "eval1000_s": 0.01275111548602581,
+        "peak_allocated_mb": 428.92431640625,
+        "peak_reserved_mb": 566.0
+      }
+    ],
+    "aggregate_train_images_s": 3450.8911236829526,
+    "gpu_util_mean": 13.925,
+    "gpu_used_peak_mb": 1224.0,
+    "samples": [
+      [
+        1.0,
+        1116.0
+      ],
+      [
+        16.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        15.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        13.0,
+        1116.0
+      ],
+      [
+        21.0,
+        1116.0
+      ],
+      [
+        16.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        16.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        17.0,
+        1116.0
+      ],
+      [
+        16.0,
+        1116.0
+      ],
+      [
+        12.0,
+        1116.0
+      ],
+      [
+        12.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        18.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        20.0,
+        1116.0
+      ],
+      [
+        19.0,
+        1116.0
+      ],
+      [
+        15.0,
+        1116.0
+      ],
+      [
+        15.0,
+        1116.0
+      ],
+      [
+        15.0,
+        1116.0
+      ],
+      [
+        13.0,
+        1116.0
+      ],
+      [
+        15.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        14.0,
+        1116.0
+      ],
+      [
+        15.0,
+        1116.0
+      ],
+      [
+        13.0,
+        1116.0
+      ],
+      [
+        20.0,
+        1224.0
+      ],
+      [
+        0.0,
+        1224.0
+      ],
+      [
+        0.0,
+        1224.0
+      ]
+    ]
+  }
+]
